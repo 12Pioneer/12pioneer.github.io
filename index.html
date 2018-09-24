@@ -1,360 +1,445 @@
 <!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pioneer12</title>
-    <meta name="description" content="">
-    
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles-merged.css">
-    <link rel="stylesheet" href="css/style.min.css">
-    <link rel="stylesheet" href="css/custom.css">
+   <!--- basic page needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>Pioneer12</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-    <!--[if lt IE 9]>
-      <script src="js/vendor/html5shiv.min.js"></script>
-      <script src="js/vendor/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
+   <!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <!-- START: header -->
-  
-  <div class="probootstrap-loader"></div>
+ 	<!-- CSS
+   ================================================== -->
+   <link rel="stylesheet" href="css/base.css">
+   <link rel="stylesheet" href="css/vendor.css">
+   <link rel="stylesheet" href="css/main.css">
 
-  <header role="banner" class="probootstrap-header">
-    <div class="container">
-        <a href="index.html"><span>Pioneer12</span></a>
-        
-        <a href="#" class="probootstrap-burger-menu visible-xs" ><i>Menu</i></a>
-        <div class="mobile-menu-overlay"></div>
+   <!-- script
+   ================================================== -->
+	<script src="js/modernizr.js"></script>
+	<script src="js/pace.min.js"></script>
 
-        <nav role="navigation" class="probootstrap-nav hidden-xs">
-          <ul class="probootstrap-main-nav">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="projects.html">Workshops</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-          <ul class="probootstrap-right-nav hidden-xs">
-            <li><a href="#"><i class="icon-twitter"></i></a></li>
-            <li><a href="#"><i class="icon-facebook2"></i></a></li>
-            <li><a href="#"><i class="icon-instagram2"></i></a></li>
-          </ul>
-          <div class="extra-text visible-xs"> 
-            <a href="#" class="probootstrap-burger-menu"><i>Menu</i></a>
-            <h5>Address</h5>
-            <p>1352,353 A , Nr. Bhavik Publications, Opp.</p> 
-            <p>Bhagwat Vidyapith, S.G.Highway, Ahmedabad-382481 - Gujarat
-            </p>
-            <h5>Connect</h5>
-            <ul class="social-buttons">
-              <li><a href="#"><i class="icon-twitter"></i></a></li>
-              <li><a href="#"><i class="icon-facebook2"></i></a></li>
-              <li><a href="#"><i class="icon-instagram2"></i></a></li>
-            </ul>
-          </div>
-        </nav>
-    </div>
-  </header>
-  <!-- END: header -->
-  <section class="probootstrap-slider flexslider">
-    <ul class="slides">
-      <li style="background-image: url(img/slider_1.jpg);">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <div class="slides-text probootstrap-animate">
-                <h2>Less is more.</h2>
-                <p><a href="#" target="_blank" class="btn btn-primary">Get Started</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li style="background-image: url(img/slider_2.jpg);">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <div class="slides-text probootstrap-animate">
-                <h2>Black is elegant.</h2>
-                <p><a href="#" target="_blank" class="btn btn-primary">Get Started</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li style="background-image: url(img/slider_3.jpg);">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <div class="slides-text probootstrap-animate">
-                <h2>Whitespace is clever.</h2>
-                <p><a href="#" target="_blank" class="btn btn-primary">Get Started</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </li>
-    </ul>
-  </section>
-  <!-- 
+   <!-- favicons
+	================================================== -->
+	<link rel="icon" type="image/png" href="favicon.png">
 
-  <section class="probootstrap-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="service left-icon probootstrap-animate">
+</head>
 
-            <div class="icon">
-              <i class="icon-laptop3"></i>
-            </div>
-            <div class="text">
-              <h3 class="heading">Business Strategy</h3>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-              <p><a href="single-page.html">Learn more</a></p>
-            </div>
+<body id="top">
 
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="service left-icon probootstrap-animate">
-            <div class="icon">
-              <i class="icon-presentation"></i>
-            </div>
-            <div class="text">
-              <h3 class="heading">Business Marketing</h3>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-              <p><a href="single-page.html">Learn more</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="service left-icon probootstrap-animate">
-            <div class="icon">
-              <i class="icon-wallet2"></i>
-            </div>
-            <div class="text">
-              <h3 class="heading">Business Profit</h3>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-              <p><a href="single-page.html">Learn more</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- END section -->
-<!--
-  <div class="probootstrap-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 probootstrap-animate" data-animate-effect="fadeInLeft">
+	<!-- header
+   ================================================== -->
+   <header class="main-header">
 
-          <div class="panel-group probootstrap-panel" id="accordion" role="tablist" aria-multiselectable="true">
-            <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="headingOne">
-                <h3 class="panel-title">
-                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+   	<div class="logo">
+	      <a href="index.html">Pioneer12</a>
+	   </div>
 
-                    Business Strategy
-                  </a>
-                </h3>
-              </div>
-              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                <div class="panel-body">
-                  <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+	   <a class="menu-toggle" href="#"><span>Menu</span></a>
 
-                  
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="headingTwo">
-                <h3 class="panel-title">
-                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Business Marketing
-                  </a>
-                </h3>
-              </div>
-              <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                <div class="panel-body">
-                  <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                  
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="headingThree">
-                <h3 class="panel-title">
-                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Business Profit
-                  </a>
-                </h3>
-              </div>
-              <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                <div class="panel-body">
-                  <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- END panel-group -->
-       <!-- </div>
-        <div class="col-md-6 probootstrap-animate" data-animate-effect="fadeInRight">
+   </header>
 
-          <figure>
-            <div class="probootstrap-video">
-              <a href="https://vimeo.com/45830194" class="popup-vimeo probootstrap-video-play"><i class="icon-play3"></i></a>
-              <img src="img/slider_2.jpg" alt="Free HTML5 Bootstrap Template by uicookies.com" class="img-responsive img-border">
-            </div>
-            <figcaption>This is a caption. Far far away, behind the word mountains.</figcaption>
-          </figure>
+   <!-- main navigation
+   ================================================== -->
+   <nav id="menu-nav-wrap">
 
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- END section -->
-  
-  
-  <!--<div class="container">
-    <div class="probootstrap-cta probootstrap-animate">
-      <h2 class="mb20">Create a beautiful templates to benefits many.</h2>
-      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-      <p><a href="#" role="button" class="btn btn-primary">Get started</a></p>
-    </div>
-  </div>
 
-  <!-- END section cta -->
+		<ul class="nav-list">
+			<li><a class="smoothscroll" href="#intro" title="">Home</a></li>
+			<li><a class="smoothscroll" href="#features" title="">Workshops</a></li>
+			<li><a class="smoothscroll" href="#infos" title="">About Us</a></li>
+		<!--	<li><a class="smoothscroll" href="#stats" title="">Stats</a></li>
+			<li><a class="smoothscroll" href="#pricing" title="">Pricing</a></li>-->
+			<li><a class="smoothscroll" href="#testimonials" title="">Testimonials</a></li>
+			<li><a class="smoothscroll" href="#download" title="">Download</a></li>
+			<li><a class="smoothscroll" href="#subscribe" title="">Newsletter</a></li>
+		</ul>
 
-  <!--<section class="probootstrap-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 section-heading probootstrap-animate">
-          <h2>The Projects</h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4 probootstrap-animate">
-          <div class="probootstrap-card">
-            <div class="probootstrap-card-media">
-              <a href="single-page.html"><img src="img/slider_1.jpg" class="img-responsive img-border" alt="Free HTML5 Template by uicookies.com"></a>
-            </div>
-            <div class="probootstrap-card-text">
-              <h2 class="probootstrap-card-heading mb0">A Clever Bike</h2>
-              <p class="category">Design &amp; Model</p>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-              <p><a href="single-page.html">View details</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 probootstrap-animate">
-          <div class="probootstrap-card">
-            <div class="probootstrap-card-media">
-              <a href="single-page.html"><img src="img/slider_2.jpg" class="img-responsive img-border" alt="Free HTML5 Template by uicookies.com"></a>
-            </div>
-            <div class="probootstrap-card-text">
-              <h2 class="probootstrap-card-heading mb0">Sleek Spaker</h2>
-              <p class="category">Design</p>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-              <p><a href="single-page.html">View details</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 probootstrap-animate">
-          <div class="probootstrap-card">
-            <div class="probootstrap-card-media">
-              <a href="single-page.html"><img src="img/slider_3.jpg" class="img-responsive img-border" alt="Free HTML5 Template by uicookies.com"></a>
-            </div>
-            <div class="probootstrap-card-text">
-              <h2 class="probootstrap-card-heading mb0">Black Person</h2>
-              <p class="category">Photography</p>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-              <p><a href="single-page.html">View details</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- END section -->
-  
-  <footer class="probootstrap-footer probootstrap-bg">
-    <!--<div class="container">
-      <div class="row mb60">
-        <div class="col-md-3">
-          <div class="probootstrap-footer-widget">
-            <h4 class="heading">About Black.</h4>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-            <p><a href="#">Read more...</a></p>
-          </div> 
-        </div>
-        <div class="col-md-3">
-          <div class="probootstrap-footer-widget probootstrap-link-wrap">
-            <h4 class="heading">Quick Links</h4>
-            <ul class="stack-link">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Products</a></li>
-              <li><a href="#">Testimonial</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="probootstrap-footer-widget">
-            <h4 class="heading">More Links</h4>
-            <ul class="stack-link">
-              <li><a href="#">Projects</a></li>
-              <li><a href="#">Privacy</a></li>
-              <li><a href="#">Terms</a></li>
-              <li><a href="#">Career</a></li>
-              <li><a href="#">Support Help</a></li>
-            </ul>
-          </div> 
-        </div>
-        <div class="col-md-3">
-          <div class="probootstrap-footer-widget probootstrap-link-wrap">
-            <h4 class="heading">Subscribe</h4>
-            <p>Far far away behind the word mountains far from.</p>
-            <form action="#">
-              <div class="form-field">
-                <input type="text" class="form-control" placeholder="Enter your email">
-                <button class="btn btn-subscribe">Send</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>-->
-      <div class="row copyright">
-        <div class="col-md-6">
-          <div class="probootstrap-footer-widget">
-            <p>&copy; 2017 <a href="#">uiCookies:Black</a>. Designed by <a href="https://uicookies.com/">Kevin NAIK</a> <br> Demo Photos from <a href="https://unsplash.com/">Unsplash</a></p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="probootstrap-footer-widget right">
-            <ul class="probootstrap-social">
-              <li><a href="#"><i class="icon-twitter"></i></a></li>
-              <li><a href="#"><i class="icon-facebook"></i></a></li>
-              <li><a href="#"><i class="icon-instagram2"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
 
-  <div class="gototop js-top">
-    <a href="#" class="js-gotop"><i class="icon-chevron-thin-up"></i></a>
-  </div>
-  <script src="js/scripts.min.js"></script>
-  <script src="js/main.min.js"></script>
-  <script src="js/custom.js"></script>
 
-  
-  </body>
+	</nav> <!-- /menu-nav-wrap -->
+
+
+	<!-- main content wrap
+   ================================================== -->
+   <div id="main-content-wrap">
+
+
+		<!-- main content wrap
+   	================================================== -->
+   	<section id="intro">
+
+		   <!-- <div class="shadow-overlay"></div> -->
+
+		   <div class="row intro-content">
+		   	<div class="col-twelve">
+
+		   		<h3 class="animate-intro">Pioneer12</h3>
+
+					<h1 class="animate-intro">
+					Lets develop skils together
+					</h1>
+
+					<div class="buttons">
+						<a class="button stroke smoothscroll animate-intro" href="#features" title="">Learn More</a>
+						<a class="button stroke smoothscroll animate-intro" href="#download" title="">About Us</a>
+					</div>
+
+				<img src="images/app-screenshot-big.jpg" alt="" class="animate-intro" width=300 height=200>
+
+			  	</div> <!-- /twelve -->
+		   </div> <!-- /row -->
+
+		</section> <!-- /intro -->
+
+
+		<!-- features
+   	================================================== -->
+		<section id="features">
+
+			<div class="row section-intro group animate-this">
+	   		<div class="col-twelve with-bottom-line">
+
+	   			<h2 class="">Workshops</h2>
+
+	   			<p>Lorem ipsum Tempor do Excepteur nulla aute deserunt reprehenderit aute commodo aliquip laboris velit eu esse exercitation ex fugiat pariatur aute consequat. Lorem ipsum Fugiat mollit quis qui. Lorem ipsum Duis Excepteur Duis magna fugiat incididunt qui id quis dolor nisi irure proident labore ut in incididunt eiusmod est anim.</p>
+
+	   		</div>
+	   	</div>
+
+			<div class="row features-wrap">
+
+				<div class="features-list block-1-3 block-s-1-2 block-tab-full">
+
+					<div class="bgrid feature animate-this">
+
+						<span class="feature-count">01.</span>
+
+					   <div class="feature-content">
+
+              	   	<h3>Fully Resposive</h3>
+
+							<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+						   </p>
+
+						</div>
+
+					</div> <!-- /bgrid -->
+
+					<div class="bgrid feature animate-this">
+
+						<span class="feature-count">02.</span>
+
+					   <div class="feature-content">
+
+              	   	<h3>Retina Ready</h3>
+
+							<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+						   </p>
+
+						</div>
+
+					</div> <!-- /bgrid -->
+
+					<div class="bgrid feature animate-this">
+
+						<span class="feature-count">03.</span>
+
+					   <div class="feature-content">
+
+              	   	<h3>Stylish Design</h3>
+
+							<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+						   </p>
+
+						</div>
+
+					</div> <!-- /bgrid -->
+
+					<div class="bgrid feature animate-this">
+
+						<span class="feature-count">04.</span>
+
+					   <div class="feature-content">
+
+              	   	<h3>Clean Code</h3>
+
+							<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+						   </p>
+
+						</div>
+
+					</div> <!-- /bgrid -->
+
+					<div class="bgrid feature animate-this">
+
+						<span class="feature-count">05.</span>
+
+					   <div class="feature-content">
+
+              	   	<h3>Easy To Customize</h3>
+
+							<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+						   </p>
+
+						</div>
+
+					</div> <!-- /bgrid -->
+
+					<div class="bgrid feature animate-this">
+
+						<span class="feature-count">06.</span>
+
+					   <div class="feature-content">
+
+              	   	<h3>Free of Charge</h3>
+
+							<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+						   </p>
+
+						</div>
+
+					</div> <!-- /bgrid -->
+
+				</div> <!-- /features-list -->
+
+			</div> <!-- /features-wrap -->
+
+		</section> <!-- /features -->
+
+
+		<!-- infos
+   	================================================== -->
+   	<section id="infos">
+
+   		<div class="info-entry">
+
+   			<div class="half-grey"></div>
+
+   			<div class="row info-entry-content">
+
+   				<div class="media-wrap">
+   					<div class="media animate-this"  data-animate="fadeInRight">
+   						<img src="images/app-screenshot-small.jpg" alt="">
+   					</div>
+   				</div>
+
+   				<div class="col-six text-part">
+
+   					<h5 class="animate-this" data-animate="fadeInLeft">Some Cool Stuff</h5>
+   					<h2 class="animate-this" data-animate="fadeInLeft">Clean and Organized Code</h2>
+
+   					<p class="animate-this" data-animate="fadeInLeft">Lorem ipsum Sunt adipisicing adipisicing esse exercitation consequat sed irure commodo cupidatat aute ea adipisicing consectetur nulla consequat irure consectetur veniam sit sit qui reprehenderit officia sunt nulla elit nisi proident.</p>
+
+   					<a href="#" class="button animate-this" data-animate="fadeInLeft">Learn More</a>
+
+   				</div>
+
+   			</div> <!-- /info-entry-content -->
+
+   		</div> <!-- /info-entry -->
+
+
+   	</section> <!-- infos -->
+
+
+	   <!-- testimonials
+   	================================================== -->
+	   <section id="testimonials">
+	   	<div class="row testimonial-content">
+	   		<div class="col-twelve">
+
+	   			<h2 class="h01 animate-this">
+                  Hear What Our Customers Say.
+               </h2>
+
+					<div id="testimonial-slider" class="flexslider animate-this">
+						<ul class="slides">
+						   <li>
+							  	<p>&ldquo;Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it.&rdquo;</p>
+							  	<p class="author-info">&mdash; Steve Jobs</p>
+							</li>
+							<li>
+								<p>&ldquo;Good design is as little design as possible. Less, but better - because it concentrates on the essential aspects, and the products are not burdened with non-essentials. Back to purity, back to simplicity..&rdquo;</p>
+								<p class="author-info">&mdash; Dieter Rams</p>
+							</li>
+							<li>
+							  	<p>&ldquo;A fundamental part of that is making mistakes together. There's no learning without trying lots of ideas and failing lots of times.&rdquo;</p>
+							  	<p class="author-info">&mdash; Jony Ive</p>
+							</li>
+						</ul>
+					</div>
+
+					<div class="flexslider-controls animate-this">
+					   <ul class="flex-control-nav">
+					      <li><img src="images/customer01.jpg" alt=""></li>
+					      <li><img src="images/customer02.jpg" alt=""></li>
+					      <li><img src="images/customer03.jpg" alt=""></li>
+					   </ul>
+					</div>
+
+	   		</div>
+	   	</div>
+	   </section> <!-- /testimonials -->
+
+
+	   <!-- download
+   	================================================== -->
+   	<section id="download">
+
+	   	<div class="overlay"></div>
+
+	   	<div class="row download-content" >
+	   		<div class="col-twelve">
+
+					<div class="text-part">
+						<h2 class="animate-this">Download Elevate Now.</h2>
+
+			   		<p class="lead animate-this">Lorem ipsum Tempor do Excepteur nulla aute deserunt reprehenderit aute commodo aliquip laboris velit eu esse exercitation ex fugiat pariatur aute consequat. Lorem ipsum Fugiat mollit quis qui. Lorem ipsum Duis Excepteur Duis magna fugiat incididunt qui id quis dolor nisi irure proident labore ut in incididunt eiusmod est anim.</p>
+					</div>
+
+			   	<a class="button large animate-this" href="#">
+			         Download Elevate
+			      </a>
+
+	   		</div>
+	   	</div>
+   	</section> <!-- /download -->
+
+
+	   <!-- subscribe
+   	================================================== -->
+  		<section id="subscribe">
+
+         <div class="row subscribe-content">
+            <div class="col-twelve">
+
+               <h2 class="h01 animate-this">Stay upto date, join our newsletter</h2>
+               <form id="mc-form" class="group" novalidate="true" autocomplete="off">
+
+               	<div class="row">
+               		<div class="col-eight tab-full left animate-this" data-animate="fadeInLeft">
+			   				<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter Your Email" required="">
+			   			</div>
+
+				   		<div class="col-four tab-full right animate-this"  data-animate="fadeInRight">
+				   			<input type="submit" value="Get Notified" name="subscribe" class="button large">
+				   		</div>
+               	</div> <!-- /row -->
+
+               	<label for="mce-EMAIL" class="subscribe-message"></label>
+
+					</form>
+
+            </div>
+         </div>
+
+      </section> <!-- /subscribe -->
+
+   </div> <!-- /main-content-wrap -->
+
+
+   <!-- footer
+	================================================== -->
+	<footer id="main-footer">
+
+   	<div class="footer-social-wrap">
+   		<div class="row">
+
+	         <ul class="footer-social-list">
+	            <li><a href="#">
+	             	<i class="fa fa-facebook-square"></i>
+	            </a></li>
+	            <li><a href="#">
+	              	<i class="fa fa-twitter"></i>
+	            </a></li>
+              <li><a href="#">
+	              	<i class="fa fa-google-plus"></i>
+	            </a></li>
+	            <li><a href="#">
+	              	<i class="fa fa-pinterest"></i>
+	            </a></li>
+	            <li><a href="#">
+	              	<i class="fa fa-instagram"></i>
+	            </a></li>
+	            <li><a href="#">
+	              	<i class="fa fa-dribbble"></i>
+	            </a></li>
+	         </ul>
+
+			</div>
+   	</div> <!-- /footer-social-wrap -->
+
+	   <div class="footer-info-wrap">
+
+	   	<div class="row footer-info">
+
+		  		<div class="col-four tab-full">
+		  			<h4><i class="icon-location-map-1"></i> Where to Find Us</h4>
+
+		  			<p class="lead">
+              52,353 A , Nr. Bhavik Publications,<br>
+              Opp. Bhagwat Vidyapith, S.G.Highway, <br>
+              Ahmedabad-382481<br>
+              Gujarat
+		         </p>
+		  		</div>
+
+		   	<div class="col-four tab-full collapse">
+	   <!--			<h4><i class="icon-phone-incoming"></i> Get In Touch</h4>
+
+	   			<p>someone@elevatewebsite.com<br>
+				   	info@elevatewebsite.com <br>
+				   	Phone: (+63) 555 1212
+				   </p>
+	   		</div>
+
+	   		<!--<div class="col-four tab-full">
+	   			<h4><i class="icon-organization-hierarchy-3"></i> Company Links</h4>
+
+				   <ul class="footer-link-list">
+				   	<li><a href="#">Company Journal</a></li>
+				   	<li><a href="#">Product Support</a></li>
+				   	<li><a href="#">Privacy Policy</a></li>
+				   </ul>
+	   		</div>--
+
+		  	</div>
+	   </div> <!-- /footer-info-wrap -->
+
+	  <!-- <div class="footer-bottom">
+
+	   	<div class="copyright">
+		     	<span>© Copyright Elevate 2016.</span>
+		     	<span>Design by <a href="http://www.styleshout.com/">styleshout</a></span>
+		   </div>
+   	</div>
+
+   </footer>
+
+   <div id="go-top">
+		<a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-long-arrow-up"></i></a>
+	</div>
+
+   <!-- preloader
+   ================================================== -->
+   <div id="preloader">
+    	<div id="loader"></div>
+   </div>
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="js/jquery-2.1.3.min.js"></script>
+   <script src="js/plugins.js"></script>
+   <script src="js/main.js"></script>
+
+</body>
+
 </html>

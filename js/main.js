@@ -1,571 +1,342 @@
-(function() {
-	'use strict';
+/* ===================================================================
+ * Elevate - Main JS
+ *
+ * ------------------------------------------------------------------- */ 
 
-	/*----------------------------------------
-		Detect Mobile
-	----------------------------------------*/
-	var isMobile = {
-		Android: function() {
-			return navigator.userAgent.match(/Android/i);
-		},
-			BlackBerry: function() {
-			return navigator.userAgent.match(/BlackBerry/i);
-		},
-			iOS: function() {
-			return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-		},
-			Opera: function() {
-			return navigator.userAgent.match(/Opera Mini/i);
-		},
-			Windows: function() {
-			return navigator.userAgent.match(/IEMobile/i);
-		},
-			any: function() {
-			return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-		}
-	};
+(function($) {
 
-	/*----------------------------------------
-		Back to top
-	----------------------------------------*/
-	var backToTop = function() {
-		$('.js-backtotop').on('click', function(e){
-			e.preventDefault();
-			$('html, body').animate({
-	      scrollTop: $('body').offset().top
-	    }, 700, 'easeInOutExpo');
-		});
-	}
+	"use strict";
 
-	var nextScroll = function() {
-		$('.js-next').on('click', function(e){
-			e.preventDefault();
-			$('html, body').animate({
-      	scrollTop: $( $.attr(this, 'href') ).offset().top
-    	}, 700, 'easeInOutExpo');
-		});
+	/* ------------------------------------------------------
+	 * Preloader and Intro Animations
+	 * ------------------------------------------------------ */ 	 
+   $(window).on('load', function() {
 
-		$(window).scroll(function(){
+      // will first fade out the loading animation 
+    	$("#loader").fadeOut("slow", function(){
 
-			var $this = $(this),
-				st = $this.scrollTop();
+        // will fade out the whole DIV that covers the website.
+        $("#preloader").delay(300).fadeOut("slow");
 
-			if (st > 10) {
-				$('.js-next').addClass('probootstrap-sleep');
-			} else {
-				$('.js-next').removeClass('probootstrap-sleep');
-			}
+      }); 
 
-		});
-	}
+      // intro section animation
+     	if (!$("html").hasClass('no-cssanimations')) {
 
-	/*----------------------------------------
-		Burger Menu
-	----------------------------------------*/	
-	var mobileMenuControl = function() {
-		
+     		setTimeout(function(){
 
-		// click burger menu
-		$('.probootstrap-burger-menu').on('click', function(e){
-			e.preventDefault();
-			if ($('body').hasClass('show')) {
-				$('.probootstrap-burger-menu').removeClass('active');
-				$('body').removeClass('show');
-			} else {
-				$('.probootstrap-burger-menu').addClass('active');
-				$('body').addClass('show');
-			}
-		});
+    			$('body .animate-intro').each(function(ctr) {
 
-		if ($(window).width() > 766) {
-			$('body').removeClass('probootstrap-mobile-menu-active');
-			$('.probootstrap-burger-menu').removeClass('active');
-		} else {
-			$('body').addClass('probootstrap-mobile-menu-active');
-		}
+					var el = $(this),
+                  animationEfx = el.data('animate');
 
-		$(window).resize(function(){
-			if ($(window).width() > 766) {
-				$('body').removeClass('probootstrap-mobile-menu-active');
-				$('.probootstrap-burger-menu').removeClass('active');
-			} else {
-				$('body').addClass('probootstrap-mobile-menu-active');
-			}
-		});
+               if (animationEfx === null || animationEfx === undefined || animationEfx.trim() === "") {
+                 	animationEfx = "fadeInUp";
+               }
 
-		// Click outside of the Mobile Menu content
-		$(document).click(function (e) {
-	    var container = $(".probootstrap-nav, .probootstrap-burger-menu");
-	    
-	    if (!container.is(e.target) && container.has(e.target).length === 0) {
-	      if ( $('body').hasClass('show') ) {
-					$('body').removeClass('show');
-					$('.probootstrap-burger-menu').removeClass('active');
-				}
-	    }
-		});
-		
+              	setTimeout( function () {
+						el.addClass(animationEfx + ' animated');
+					}, ctr * 100);
 
-	};
-
-	/*----------------------------------------
-		Search
-	----------------------------------------*/
-	var searchControl = function() {
-		$('.js-probootstrap-search').on('click', function(){
-			$('#probootstrap-search').addClass('active');
-			setTimeout(function(){
-				$('#probootstrap-search').find('#search').focus().select();
-			}, 500);
-		});
-		$('.js-probootstrap-close').on('click', function(){
-			$('#probootstrap-search').removeClass('active');
-		});
-	};
-
-	/*----------------------------------------
-		Menu Hover
-	----------------------------------------*/
-	var menuHover = function() {
-		if (!isMobile.any()) {
-			$('.probootstrap-navbar .navbar-nav li.dropdown').hover(function() {
-			  $(this).find('> .dropdown-menu').stop(true, true).delay(200).fadeIn(500).addClass('animated-fast fadeInUp');
-			}, function() {
-				$(this).find('> .dropdown-menu').stop(true, true).fadeOut(200).removeClass('animated-fast fadeInUp')
-			});
-		}
-	}
-	/*----------------------------------------
-		Carousel
-	----------------------------------------*/
-	var owlCarousel = function(){
-
-		var owl1 = $('.owl-carousel-carousel'),
-			 	owl2 = $('.owl-carousel-carousel2'),
-			 	owl3 = $('.owl-carousel-carousel3');
-		owl1.owlCarousel({
-			items: 3,
-			loop: true,
-			margin: 20,
-			nav: false,
-			dots: false,
-			smartSpeed: 800,
-			autoHeight: true,
-			navText: [
-		      "<i class='icon-keyboard_arrow_left owl-direction'></i>",
-		      "<i class='icon-keyboard_arrow_right owl-direction'></i>"
-	     	],
-	     	responsive:{
-	        0:{
-	            items:1
-	        },
-	        400:{
-	            items:1
-	        },
-	        600:{
-	            items:2
-	        },
-	        1000:{
-	            items:3
-	        }
-	    	}
-		});
-
-		owl2.owlCarousel({
-			items: 3,
-			loop: true,
-			margin: 20,
-			nav: false,
-			dots: false,
-			smartSpeed: 800,
-			autoHeight: true,
-			navText: [
-		      "<i class='icon-keyboard_arrow_left owl-direction'></i>",
-		      "<i class='icon-keyboard_arrow_right owl-direction'></i>"
-	     	],
-	     	responsive:{
-	        0:{
-	            items:1
-	        },
-	        400:{
-	            items:1
-	        },
-	        600:{
-	            items:2
-	        },
-	        1000:{
-	            items:3
-	        }
-	    	}
-		});
-
-		owl3.owlCarousel({
-			items: 3,
-			loop: true,
-			margin: 20,
-			nav: false,
-			dots: false,
-			smartSpeed: 800,
-			autoHeight: true,
-			navText: [
-		      "<i class='icon-keyboard_arrow_left owl-direction'></i>",
-		      "<i class='icon-keyboard_arrow_right owl-direction'></i>"
-	     	],
-	     	responsive:{
-	        0:{
-	            items:1
-	        },
-	        400:{
-	            items:1
-	        },
-	        600:{
-	            items:2
-	        },
-	        1000:{
-	            items:3
-	        }
-	    	}
-		});
-
-
-		// Custom Navigation Events
-		$('.probootstrap-owl-next').click(function(e){
-		  owl1.trigger('next.owl.carousel');
-		  e.preventDefault();
-		});
-		$('.probootstrap-owl-prev').click(function(e){
-		  owl1.trigger('prev.owl.carousel');
-		  e.preventDefault();
-		});
-
-		// Custom Navigation Events
-		$('.probootstrap-owl-next2').click(function(e){
-		  owl2.trigger('next.owl.carousel');
-		  e.preventDefault();
-		});
-		$('.probootstrap-owl-prev2').click(function(e){
-		  owl2.trigger('prev.owl.carousel');
-		  e.preventDefault();
-		});
-
-		// Custom Navigation Events
-		$('.probootstrap-owl-next3').click(function(e){
-		  owl3.trigger('next.owl.carousel');
-		  e.preventDefault();
-		});
-		$('.probootstrap-owl-prev3').click(function(e){
-		  owl3.trigger('prev.owl.carousel');
-		  e.preventDefault();
-		});
-
-		var owl = $('.owl-carousel-fullwidth');
-		owl.owlCarousel({
-			loop: true,
-			margin: 20,
-			nav: false,
-			dots: true,
-			smartSpeed: 800,
-			autoHeight: true,
-			autoplay: true,
-			navText: [
-		      "<i class='icon-keyboard_arrow_left owl-direction'></i>",
-		      "<i class='icon-keyboard_arrow_right owl-direction'></i>"
-	    ],
-	    responsive:{
-	    	0:{
-		      items: 1
-			  },
-			  980:{
-		      items: 1
-			  },
-			  1100:{
-		      items: 2
-			  }
-			}
-		});
-
-		var owl = $('.owl-work');
-		owl.owlCarousel({
-			stagePadding: 150,
-			loop: true,
-			margin: 20,
-			nav: true,
-			dots: false,
-			mouseDrag: false,
-			autoWidth: true,
-			autoHeight: true,
-	    autoplay: true,
-	    autoplayTimeout:2000,
-	    autoplayHoverPause:true,
-			navText: [	
-				"<i class='icon-chevron-thin-left'></i>",
-				"<i class='icon-chevron-thin-right'></i>"
-			],
-			responsive:{
-			  0:{
-		      items:1,
-		      stagePadding: 10
-			  },
-			  500:{
-			  	items:2,
-		      stagePadding: 20
-			  },
-			  600:{
-		      items:2,
-		      stagePadding: 40
-			  },
-			  800: {
-			  	items:2,
-			  	stagePadding: 100
-			  },
-			  1100:{
-		      items:3
-			  },
-			  1400:{
-		      items:4
-			  },
-			}
-		});
-	};
-
-	
-	/*----------------------------------------
-		Slider
-	----------------------------------------*/
-	var flexSlider = function() {
-	  $('.flexslider').flexslider({
-	    animation: "fade",
-	    prevText: "",
-	    nextText: "",
-	    slideshowSpeed: 2000, // speed of slides
-	    animationSpeed: 600,
-	    slideshow: true,
-	    directionNav: false,
-	    controlNav: true
-	  });
-	  $('.flexslider2').flexslider({
-	    animation: "fade",
-	    prevText: "",
-	    nextText: "",
-	    slideshowSpeed: 2000, // speed of slides
-	    animationSpeed: 600,
-	    slideshow: true,
-	    directionNav: false,
-	    controlNav: false
-	  });
-	}
-
-	
-	/*----------------------------------------
-		Content Animation
-	----------------------------------------*/
-	var contentWayPoint = function() {
-		var i = 0;
-		$('.probootstrap-animate').waypoint( function( direction ) {
-
-			if( direction === 'down' && !$(this.element).hasClass('probootstrap-animated') ) {
-				
-				i++;
-
-				$(this.element).addClass('item-animate');
-				setTimeout(function(){
-
-					$('body .probootstrap-animate.item-animate').each(function(k){
-						var el = $(this);
-						setTimeout( function () {
-							var effect = el.data('animate-effect');
-							if ( effect === 'fadeIn') {
-								el.addClass('fadeIn probootstrap-animated');
-							} else if ( effect === 'fadeInLeft') {
-								el.addClass('fadeInLeft probootstrap-animated');
-							} else if ( effect === 'fadeInRight') {
-								el.addClass('fadeInRight probootstrap-animated');
-							} else {
-								el.addClass('fadeInUp probootstrap-animated');
-							}
-							el.removeClass('item-animate');
-						},  k * 200, 'easeInOutExpo' );
-					});
+				});
 					
-				}, 200);
-				
-			}
+			}, 1000);
+     	}   	   	
 
-		} , { offset: '95%' } );
-	};
-
-	
-
-	/*----------------------------------------
-		Counter Animation
-	----------------------------------------*/
-	var counter = function() {
-		$('.js-counter').countTo({
-			 formatter: function (value, options) {
-	      return value.toFixed(options.decimals);
-	    },
-		});
-	};
-	var counterWayPoint = function() {
-		if ($('#probootstrap-counter').length > 0 ) {
-			$('#probootstrap-counter').waypoint( function( direction ) {
-										
-				if( direction === 'down' && !$(this.element).hasClass('probootstrap-animated') ) {
-					setTimeout( counter , 400);					
-					$(this.element).addClass('probootstrap-animated');
-				}
-			} , { offset: '90%' } );
-		}
-	};
-
-	var magnificPopupControl = function() {
+  	});
 
 
-		$('.image-popup').magnificPopup({
-			type: 'image',
-			removalDelay: 300,
-			mainClass: 'mfp-with-zoom',
-			gallery:{
-				enabled:true
-			},
-			zoom: {
-				enabled: true, // By default it's false, so don't forget to enable it
+	/* ------------------------------------------------------
+	 * Hide Logo
+	 * ------------------------------------------------------ */ 	 
+   $(window).on('scroll', function() {
 
-				duration: 300, // duration of the effect, in milliseconds
-				easing: 'ease-in-out', // CSS transition easing function
-
-				// The "opener" function should return the element from which popup will be zoomed in
-				// and to which popup will be scaled down
-				// By defailt it looks for an image tag:
-				opener: function(openerElement) {
-				// openerElement is the element on which popup was initialized, in this case its <a> tag
-				// you don't need to add "opener" option if this code matches your needs, it's defailt one.
-				return openerElement.is('img') ? openerElement : openerElement.find('img');
-				}
-			}
-		});
-
-		$('.with-caption').magnificPopup({
-			type: 'image',
-			closeOnContentClick: true,
-			closeBtnInside: false,
-			mainClass: 'mfp-with-zoom mfp-img-mobile',
-			image: {
-				verticalFit: true,
-				titleSrc: function(item) {
-					return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
-				}
-			},
-			zoom: {
-				enabled: true
-			}
-		});
-
-
-		$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
-      disableOn: 700,
-      type: 'iframe',
-      mainClass: 'mfp-fade',
-      removalDelay: 160,
-      preloader: false,
-
-      fixedContentPos: false
-    });
-	}
-
-	/*----------------------------------------
-		Stellar
-	----------------------------------------*/
-	var stellarInit = function() {
-		if( !isMobile.any() ) {
-			$(window).stellar();
-		}
-	};
-
-	var inlineSVG = function() {
-		$('img.svg').each(function(){
-	    var $img = $(this);
-	    var imgID = $img.attr('id');
-	    var imgClass = $img.attr('class');
-	    var imgURL = $img.attr('src');
-
-	    $.get(imgURL, function(data) {
-	        // Get the SVG tag, ignore the rest
-	        var $svg = jQuery(data).find('svg');
-
-	        // Add replaced image's ID to the new SVG
-	        if(typeof imgID !== 'undefined') {
-	            $svg = $svg.attr('id', imgID);
-	        }
-	        // Add replaced image's classes to the new SVG
-	        if(typeof imgClass !== 'undefined') {
-	            $svg = $svg.attr('class', imgClass+' replaced-svg');
-	        }
-
-	        // Remove any invalid XML tags as per http://validator.w3.org
-	        $svg = $svg.removeAttr('xmlns:a');
-
-	        // Replace image with new SVG
-	        $img.replaceWith($svg);
-
-	    }, 'xml');
-
+		var y = $(window).scrollTop(),
+		    siteHeader = $('header'),
+		    siteLogo = siteHeader.find('.logo'),
+		    triggerHeight = siteHeader.innerHeight();		
+     
+	   if (y > triggerHeight) {
+	      siteLogo.fadeOut();	     
+	   }
+      else {
+         siteLogo.fadeIn();
+      }
+    
 	});
-	};
 
-	// Loading page
-	var loaderPage = function() {
-		$(".probootstrap-loader").fadeOut("slow");
-	};
 
-	var goToTop = function() {
+	/* ------------------------------------------------------
+	 * Fitvids
+	 * ------------------------------------------------------ */ 	
+  	$(".fluid-video-wrapper").fitVids();
 
-		$('.js-gotop').on('click', function(event){
+
+	/* ------------------------------------------------------
+	 * Flexslider
+	 * ------------------------------------------------------ */
+  	$(window).on('load', function() {
+
+	   $('#testimonial-slider').flexslider({
+	   	namespace: "flex-",
+	      controlsContainer: ".flexslider-controls",
+	      animation: "fade",
+		  	manualControls: ".flex-control-nav li",	     
+	      controlNav: true,
+	      directionNav: false,
+	      smoothHeight: true,
+	      slideshowSpeed: 7000,
+	      animationSpeed: 600,
+	      randomize: false,
+	      touch: true,
+	      useCSS: false, // Chrome fix
+	      start: function(slider){
+			   $(slider).trigger('resize');  	
+			}			
+	   });
+
+   });
+
+
+	/* ------------------------------------------------------
+	 * Mobile Menu
+	 * ------------------------------------------------------ */
+   var toggleButton = $('.menu-toggle'),
+       nav = $('#menu-nav-wrap'),
+       siteBody = $('body'),
+       mainContents = $('#main-content-wrap, header');
+
+	// open-close menu by clicking on the menu icon
+	toggleButton.on('click', function(e){
+
+		e.preventDefault();
+
+		toggleButton.toggleClass('is-clicked');
+		siteBody.toggleClass('menu-is-open').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+			// firefox transitions break when parent overflow is changed, 
+			// so we need to wait for the end of the trasition to give the body an overflow hidden
+			siteBody.toggleClass('overflow-hidden');
+		});
 			
-			event.preventDefault();
+		// check if transitions are not supported 
+		if ($('html').hasClass('no-csstransitions')) {
+			 siteBody.toggleClass('overflow-hidden');
+		}
 
-			$('html, body').animate({
-				scrollTop: $('html').offset().top
-			}, 500, 'easeInOutExpo');
+	});
+
+	// close menu clicking outside the menu itself
+	mainContents.on('click', function(e){
+
+		if( !$(e.target).is('.menu-toggle, .menu-toggle span') ) {
+
+			toggleButton.removeClass('is-clicked');
+			siteBody.removeClass('menu-is-open').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+				siteBody.removeClass('overflow-hidden');
+			});
 			
-			return false;
-		});
+			// check if transitions are not supported
+			if ($('html').hasClass('no-csstransitions')) {
+				 siteBody.removeClass('overflow-hidden');
+			}
+		}
 
-		$(window).scroll(function(){
-			var $win = $(window);
-			if ($win.scrollTop() > 200) {
-				$('.js-top').addClass('active');
-			} else {
-				$('.js-top').removeClass('active');
+	});
+
+
+	/* ------------------------------------------------------
+	 * Stat Counter
+	 * ------------------------------------------------------ */
+   var statSection = $("#stats"),
+       stats = $(".stat-count");
+
+   statSection.waypoint({
+
+   	handler: function(direction) {
+
+      	if (direction === "down") {       		
+
+			   stats.each(function () {
+				   var $this = $(this);
+
+				   $({ Counter: 0 }).animate({ Counter: $this.text() }, {
+				   	duration: 4000,
+				   	easing: 'swing',
+				   	step: function (curValue) {
+				      	$this.text(Math.ceil(curValue));
+				    	}
+				  	});
+				});
+
+       	} 
+
+       	// trigger once only
+       	this.destroy();  
+
+		},			
+		offset: "90%"
+	
+	});
+
+
+  /* ------------------------------------------------------
+	* Highlight the current section in the navigation bar
+	* ------------------------------------------------------ */
+	var sections = $("section"),
+	navigationLinks = $("#menu-nav-wrap .nav-list a");	
+
+	sections.waypoint( {
+
+      handler: function(direction) {
+
+		   var activeSection;
+
+			activeSection = $('section#' + $(this.element).attr("id"));
+
+			if (direction === "up") activeSection = activeSection.prev();
+
+			var activeLink = $('#menu-nav-wrap .nav-list a[href="#' + activeSection.attr("id") + '"]');			
+
+         navigationLinks.parent().removeClass("current");
+			activeLink.parent().addClass("current");
+
+		},
+		offset: '25%'
+	});
+
+
+  /* ------------------------------------------------------
+	* Smooth Scrolling
+	* ------------------------------------------------------ */
+  	$('.smoothscroll').on('click', function (e) {
+	 	
+	 	e.preventDefault();
+
+   	var target = this.hash,
+    	$target = $(target);
+
+    	$('html, body').stop().animate({
+       	'scrollTop': $target.offset().top
+      }, 800, 'swing').promise().done(function () {
+
+      	// check if menu is open
+      	if ($('body').hasClass('menu-is-open')) {
+				$('.menu-toggle').trigger('click');
 			}
 
-		});
-	
-	};
+      	window.location.hash = target;
+      });
 
-	/*----------------------------------------
-		Document Ready 
-	----------------------------------------*/
-	$(document).ready(function(){
-		menuHover();
-		counterWayPoint();
-		contentWayPoint();
-		backToTop();
-		searchControl();
-		magnificPopupControl();
-		stellarInit();
-		mobileMenuControl();
-		nextScroll();
-		loaderPage();
-		goToTop();
-		inlineSVG();
+  	});
+
+
+  /* ------------------------------------------------------
+	* Placeholder Plugin Settings
+	* ------------------------------------------------------ */
+	$('input, textarea, select').placeholder()  
+
+
+  /* ------------------------------------------------------
+	* AjaxChimp
+	* ------------------------------------------------------ */
+
+	// Example MailChimp url: http://xxx.xxx.list-manage.com/subscribe/post?u=xxx&id=xxx
+	var mailChimpURL = 'http://facebook.us8.list-manage.com/subscribe/post?u=cdb7b577e41181934ed6a6a44&amp;id=e65110b38d'
+
+	$('#mc-form').ajaxChimp({
+
+		language: 'es',
+	   url: mailChimpURL
+
 	});
 
-	$(window).load(function(){
-		owlCarousel();
-		flexSlider();
+	// Mailchimp translation
+	//
+	//  Defaults:
+	//	 'submit': 'Submitting...',
+	//  0: 'We have sent you a confirmation email',
+	//  1: 'Please enter a value',
+	//  2: 'An email address must contain a single @',
+	//  3: 'The domain portion of the email address is invalid (the portion after the @: )',
+	//  4: 'The username portion of the email address is invalid (the portion before the @: )',
+	//  5: 'This email address looks fake or invalid. Please enter a real email address'
+
+	$.ajaxChimp.translations.es = {
+	  'submit': 'Submitting...',
+	  0: '<i class="fa fa-check"></i> We have sent you a confirmation email',
+	  1: '<i class="fa fa-warning"></i> You must enter a valid e-mail address.',
+	  2: '<i class="fa fa-warning"></i> E-mail address is not valid.',
+	  3: '<i class="fa fa-warning"></i> E-mail address is not valid.',
+	  4: '<i class="fa fa-warning"></i> E-mail address is not valid.',
+	  5: '<i class="fa fa-warning"></i> E-mail address is not valid.'
+	} 
+
+
+	/* ------------------------------------------------------
+	* Animations
+	* ------------------------------------------------------ */
+	if (!$("html").hasClass('no-cssanimations')) {
+
+		$('.animate-this').waypoint({
+
+			handler: function(direction) {
+
+				var defAnimationEfx = "fadeInUp";
+
+				if ( direction === 'down' && !$(this.element).hasClass('animated')) {
+
+					$(this.element).addClass('item-animate');
+
+					setTimeout(function() {
+
+						$('body .animate-this.item-animate').each(function(ctr) {
+
+							var el = $(this),
+		                  animationEfx = el.data('animate');
+
+		               if (animationEfx === null || animationEfx === undefined || animationEfx.trim() === "") {
+		                 	animationEfx = defAnimationEfx;
+		               }
+
+		              	setTimeout( function () {
+								el.addClass(animationEfx + ' animated');
+								el.removeClass('item-animate');
+							}, ctr * 50);
+
+						});
+							
+					}, 500);
+
+				}
+
+				// trigger once only
+       		this.destroy();  
+
+			}, 
+			offset: '95%'
+
+		}); 
+	} 
+
+  /* ------------------------------------------------------
+	* Back to Top
+	* ------------------------------------------------------ */
+	var pxShow = 300,      // height on which the button will show
+	    fadeInTime = 400,  // how slow/fast you want the button to show
+	    fadeOutTime = 400, // how slow/fast you want the button to hide
+       scrollSpeed = 300, // how slow/fast you want the button to scroll to top. can be a value, 'slow', 'normal' or 'fast'
+       goTopButton = $("#go-top") 
+
+	// Show or hide the sticky footer button
+	$(window).on('scroll', function() {
+
+		if ($(window).scrollTop() >= pxShow) {
+			goTopButton.fadeIn(fadeInTime);
+		} else {
+			goTopButton.fadeOut(fadeOutTime);
+		}
+
 	});
+ 
 
-	
-
-})();
+})(jQuery);
