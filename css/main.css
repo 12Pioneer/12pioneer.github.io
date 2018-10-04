@@ -2485,7 +2485,7 @@ footer a:active {
 
 .footer-info a,
 .footer-info a:visited {
-	color: #292c35;
+	color: #FFFFFF;
 }
 
 .footer-info a:hover,
@@ -2517,16 +2517,18 @@ footer a:active {
 
 .copyright span {
 	display: inline-block;
+	color: #FFFFFF;
 }
 
 .copyright span::after {
 	content: "|";
 	display: inline-block;
 	padding: 0 1rem 0 1.2rem;
-	color: rgba(255, 255, 255, 0.1);
+	color: #FFFFFF;
 }
 
 .copyright span:last-child::after {
+	color: #FFFFFF;
 	display: none;
 }
 

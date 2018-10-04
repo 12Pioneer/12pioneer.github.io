@@ -280,6 +280,11 @@ video {
 	height: auto;
 }
 
+.test {
+	max-width: 100%;
+	height: 200px;
+}
+
 
 /* -------------------------------------------------------------------
  * Typography resets - (_basic.scss)
